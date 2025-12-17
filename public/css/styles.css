@@ -513,9 +513,9 @@ header.scrolled .nav-container {
 }
 
 .hero h1,
-.hero .hero-subtitle,
-.hero .hero-description {
-    color: #FFFFFF; /* Pure white text */
+.hero .hero-description,
+.hero .hero-feature {
+    color: #FFFFFF !important; /* Force white color */
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8); /* Enhanced shadow for max contrast */
 }
 
@@ -530,7 +530,8 @@ header.scrolled .nav-container {
 .hero .hero-subtitle {
     font-size: 1.25rem;
     font-weight: 500;
-    color: var(--accent-lime);
+    color: var(--accent-lime) !important; /* Force lime color */
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8); /* Add shadow for contrast */
     margin-bottom: 1.5rem;
 }
 
@@ -1962,7 +1963,7 @@ chat-message.ai h4 {
 
 .chat-message.ai h1:first-child,
 .chat-message.ai h2:first-child,
-.chat-message.ai h3:first-child,
+chat-message.ai h3:first-child,
 chat-message.ai h4:first-child {
     margin-top: 0;
 }
