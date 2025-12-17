@@ -475,14 +475,61 @@ header.scrolled .nav-container {
 
 /* 8. HERO SECTIONS */
 .hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     position: relative;
+    padding: 12rem 0 8rem;
+    background-image: url('/images/hero.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    text-align: center;
     overflow: hidden;
-    padding-top: 80px;
-    background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 40%, #F0F9FF 100%);
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(10, 20, 40, 0.7); /* Dark blue overlay */
+    z-index: 1;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    letter-spacing: -1px;
+}
+
+.hero .hero-subtitle {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--accent-lime);
+    margin-bottom: 1.5rem;
+}
+
+.hero .hero-description {
+    max-width: 650px;
+    margin: 0 auto 2rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.hero .hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
 /* Animated Background Mesh */
@@ -1963,7 +2010,7 @@ chat-message.ai h4:first-child {
 
 /* Better spacing between elements */
 .chat-message.ai h1 + ul,
-.chat-message.ai h2 + ul,
+chat-message.ai h2 + ul,
 chat-message.ai h3 + ul,
 chat-message.ai h4 + ul,
 .chat-message.ai h1 + p,
