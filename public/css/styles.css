@@ -477,29 +477,30 @@ header.scrolled .nav-container {
 .hero {
     position: relative;
     padding: 12rem 0 8rem;
-    background-image: url('/images/hero.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     color: white;
     text-align: center;
     overflow: hidden;
 }
 
-.hero::before {
-    content: '';
+.page-hero-canvas {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(10, 20, 40, 0.7); /* Dark blue overlay */
-    z-index: 1;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Place canvas behind content */
 }
 
 .hero .container {
     position: relative;
     z-index: 2;
+}
+
+.hero h1,
+.hero .hero-subtitle,
+.hero .hero-description {
+    color: #FFFFFF; /* Ensure text is pure white */
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7); /* Add a strong shadow for contrast */
 }
 
 .hero h1 {
@@ -522,7 +523,6 @@ header.scrolled .nav-container {
     margin: 0 auto 2rem;
     font-size: 1.1rem;
     line-height: 1.6;
-    color: rgba(255, 255, 255, 0.9);
 }
 
 .hero .hero-buttons {
@@ -2518,6 +2518,7 @@ chat-message.ai p + h4 {
 
 /* 16. COMPARISON TABLE */
 .comparison-table-wrapper {
+
     background: white;
     border-radius: var(--radius-xl);
     border: var(--border-light);
