@@ -617,6 +617,14 @@
     <script src="/js/aiChat.js"></script>
     <script src="/js/main.js"></script>
 
+    <!-- AI Chat Initializer -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const aiChatInstance = new AIChat();
+            aiChatInstance.init();
+        });
+    </script>
+
     <!-- FAQ Accordion Script -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {

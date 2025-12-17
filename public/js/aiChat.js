@@ -4,13 +4,13 @@
  */
 class AIChat {
     constructor() {
-        this.chatToggle = document.getElementById('chatToggle');
-        this.chatWindow = document.getElementById('chatWindow');
-        this.chatClose = document.getElementById('chatClose');
-        this.chatReset = document.getElementById('chatReset');
-        this.chatForm = document.getElementById('chatForm');
-        this.chatInput = document.getElementById('chatInput');
-        this.chatMessages = document.getElementById('chatMessages');
+        this.chatToggle = null;
+        this.chatWindow = null;
+        this.chatClose = null;
+        this.chatReset = null;
+        this.chatForm = null;
+        this.chatInput = null;
+        this.chatMessages = null;
         this.apiEndpoint = '/api/chat';
         this.configEndpoint = '/api/chat/config';
         this.isOpen = false;
@@ -24,8 +24,6 @@ class AIChat {
         this.toolStatusDiv = null;
         this.chatEmailBtn = null;
         this.hasShownEmailButton = false;
-
-        this.init();
     }
 
     generateSessionId() {
@@ -42,8 +40,16 @@ class AIChat {
     }
 
     async init() {
-        if (!this.chatToggle || !this.chatWindow) {
-            console.warn('Chat widget elements not found');
+        this.chatToggle = document.getElementById('chatToggle');
+        this.chatWindow = document.getElementById('chatWindow');
+        this.chatClose = document.getElementById('chatClose');
+        this.chatReset = document.getElementById('chatReset');
+        this.chatForm = document.getElementById('chatForm');
+        this.chatInput = document.getElementById('chatInput');
+        this.chatMessages = document.getElementById('chatMessages');
+
+        if (!this.chatToggle || !this.chatWindow || !this.chatMessages) {
+            console.error('Chat widget critical elements not found. Aborting initialization.');
             return;
         }
 
@@ -1019,17 +1025,6 @@ class AIChat {
             messageDiv.style.borderLeft = '4px solid #ef4444';
         }
     }
-}
-
-// Initialize when DOM is ready
-let aiChatInstance;
-
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
-        aiChatInstance = new AIChat();
-    });
-} else {
-    aiChatInstance = new AIChat();
 }
 
 // Export for use in other scripts
