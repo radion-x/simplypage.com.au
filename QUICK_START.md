@@ -28,7 +28,7 @@
 2. AI asks for name/contact
 3. Reply: "John Smith, john@test.com"
 4. See: ✅ green card with reference number
-5. Check emails at: jack6nimble@gmail.com, hello@websited.org
+5. Check emails at: jack6nimble@gmail.com, hello@simplepage.com.au
 ```
 
 ### 3. Test Dashboard (1 min)
@@ -145,7 +145,7 @@ pkill -f "node server.js"
 
 ## 📧 Email Recipients
 
-- **Admin notifications:** jack6nimble@gmail.com, hello@websited.org
+- **Admin notifications:** jack6nimble@gmail.com, hello@simplepage.com.au
 - **Customer confirmations:** User's provided email address
 
 ---

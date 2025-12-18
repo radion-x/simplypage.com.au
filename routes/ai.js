@@ -540,7 +540,7 @@ async function sendCallbackEmails(data) {
                                 <div class="footer">
                                     <p style="margin: 0 0 10px 0;"><strong>Websited</strong></p>
                                     <p style="margin: 0 0 5px 0;">2 Martin Place, Sydney, Australia</p>
-                                    <p style="margin: 0 0 5px 0;">📧 hello@websited.org | 🌐 websited.org</p>
+                                    <p style="margin: 0 0 5px 0;">📧 hello@simplepage.com.au | 🌐 simplepage.com.au</p>
                                     <p style="margin: 20px 0 0 0; font-size: 12px;">25+ years dominating digital marketing with AI-powered solutions</p>
                                 </div>
                             </div>
@@ -548,7 +548,7 @@ async function sendCallbackEmails(data) {
                     </body>
                     </html>
                 `,
-                text: `Thank you, ${data.name}!\n\nWe've received your callback request.\n\nYour Reference Number: ${data.referenceId}\n\nWhat happens next?\n- Our team will review your request immediately\n- You'll hear from us within 24 hours via ${data.preferred_contact_method || 'your preferred method'}\n- We'll discuss your specific business needs and goals\n\nWant to get started faster? Book a time: https://calendly.com/websited\n\nWebsited - AI & Digital Marketing Solutions\n2 Martin Place, Sydney, Australia\nhello@websited.org | websited.org`
+                text: `Thank you, ${data.name}!\n\nWe've received your callback request.\n\nYour Reference Number: ${data.referenceId}\n\nWhat happens next?\n- Our team will review your request immediately\n- You'll hear from us within 24 hours via ${data.preferred_contact_method || 'your preferred method'}\n- We'll discuss your specific business needs and goals\n\nWant to get started faster? Book a time: https://calendly.com/websited\n\nWebsited - AI & Digital Marketing Solutions\n2 Martin Place, Sydney, Australia\nhello@simplepage.com.au | simplepage.com.au`
             };
 
             await mg.messages().send(customerEmailData);
@@ -1190,7 +1190,7 @@ router.post('/chat/email-transcript', async (req, res) => {
                                 <p style="margin: 0 0 8px 0;">AI & Digital Marketing Solutions</p>
                                 <p style="margin: 0 0 8px 0;">2 Martin Place, Sydney, NSW 2000, Australia</p>
                                 <p style="margin: 0 0 15px 0;">
-                                    📧 <a href="mailto:hello@websited.org" style="color: #1E40AF; text-decoration: none;">hello@websited.org</a> | 
+                                    📧 <a href="mailto:hello@simplepage.com.au" style="color: #1E40AF; text-decoration: none;">hello@simplepage.com.au</a> |
                                     🌐 <a href="${process.env.SITE_URL}" style="color: #1E40AF; text-decoration: none;">websited.org</a>
                                 </p>
                                 <p style="margin: 20px 0 0 0; font-size: 12px; color: #9ca3af;">
@@ -1203,7 +1203,7 @@ router.post('/chat/email-transcript', async (req, res) => {
                 </body>
                 </html>
             `,
-            text: `Your Websited Chat Transcript - ${currentDate}\n\n${transcript.map(msg => `${msg.role === 'user' ? 'You' : 'Websited AI'}: ${msg.content}`).join('\n\n')}\n\nReady to take the next step?\n\nLet's discuss how we can help grow your business with AI-powered marketing.\nSchedule a free consultation: ${process.env.SITE_URL}/contact/\n\nWebsited - AI & Digital Marketing Solutions\n2 Martin Place, Sydney, Australia\nhello@websited.org | ${process.env.SITE_URL}\n\nReference ID: ${referenceId}`
+            text: `Your Websited Chat Transcript - ${currentDate}\n\n${transcript.map(msg => `${msg.role === 'user' ? 'You' : 'Websited AI'}: ${msg.content}`).join('\n\n')}\n\nReady to take the next step?\n\nLet's discuss how we can help grow your business with AI-powered marketing.\nSchedule a free consultation: ${process.env.SITE_URL}/contact/\n\nWebsited - AI & Digital Marketing Solutions\n2 Martin Place, Sydney, Australia\nhello@simplepage.com.au | ${process.env.SITE_URL}\n\nReference ID: ${referenceId}`
         };
 
         await mg.messages().send(customerEmailData);

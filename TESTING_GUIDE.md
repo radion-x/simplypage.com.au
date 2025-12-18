@@ -46,7 +46,7 @@ Successfully integrated two major features into the Websited AI chatbot:
 - Green success card displays in chat
 
 **Email Notifications:**
-- **Admin Email** (to jack6nimble@gmail.com, hello@websited.org):
+- **Admin Email** (to jack6nimble@gmail.com, hello@simplepage.com.au):
   - Urgent red header styling
   - Contact details table
   - Full conversation context
@@ -260,7 +260,7 @@ You have access to two powerful tools to enhance your assistance:
 4. Verify:
    ✅ "📞 Scheduling..." status appears
    ✅ Green success card with reference ID
-   ✅ Admin emails sent to jack6nimble@gmail.com, hello@websited.org
+   ✅ Admin emails sent to jack6nimble@gmail.com, hello@simplepage.com.au
    ✅ Customer email sent to john@example.com
 5. Check database:
    psql postgresql://localhost:5432/websited_dev

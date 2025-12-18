@@ -366,7 +366,7 @@ New section: **TOOL USAGE INSTRUCTIONS**
    - 📞 "Scheduling..." status message
    - Green success card with reference ID (CB-XXXXX-X)
    - "We'll contact you within 24 hours" message
-6. Check email: jack6nimble@gmail.com and hello@websited.org should receive admin notification
+6. Check email: jack6nimble@gmail.com and hello@simplepage.com.au should receive admin notification
 7. Check email: john@example.com should receive confirmation with reference number
 ```
 

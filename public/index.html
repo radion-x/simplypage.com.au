@@ -47,23 +47,29 @@
             text-align: center;
             transition: all 0.3s ease;
             box-shadow: var(--shadow-sm);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
         }
         .difference-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--accent-indigo);
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.1);
+            border-color: rgba(37, 99, 235, 0.5);
         }
         .difference-icon {
             width: 64px;
-            height: 64px;
+            width: 56px;
+            height: 56px;
             margin: 0 auto 1.5rem;
-            color: var(--accent-indigo);
-            background: rgba(37, 99, 235, 0.1);
-            border-radius: 50%;
+            color: white;
+            background: var(--gradient-primary);
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 12px;
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+            transition: all 0.3s ease;
         }
         .tech-stack-grid {
             display: grid;
@@ -76,13 +82,17 @@
             padding: 2rem;
             border-radius: var(--radius-lg);
             border: var(--border-light);
-            border-left: 4px solid var(--accent-indigo);
+            border-left: none;
             box-shadow: var(--shadow-sm);
             transition: all 0.3s ease;
+            position: relative;
+            padding-left: 3.5rem;
+            z-index: 1;
         }
         .tech-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-md);
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.1);
+            border-color: rgba(37, 99, 235, 0.5);
         }
         .pricing-grid-3 {
             display: grid;
@@ -96,6 +106,48 @@
             color: var(--accent-indigo);
             margin: 1rem 0;
         }
+       .tech-icon {
+           position: absolute;
+           left: -16px;
+           top: 50%;
+           transform: translateY(-50%);
+           width: 48px;
+           height: 48px;
+           background: var(--gradient-primary);
+           color: white;
+           border-radius: 12px;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+       }
+
+       .difference-card::before,
+       .tech-card::before {
+           content: "";
+           position: absolute;
+           top: 0;
+           left: 0;
+           right: 0;
+           bottom: 0;
+           border-radius: var(--radius-lg);
+           border: 2px solid transparent;
+           background: linear-gradient(120deg, var(--accent-cyan), var(--accent-indigo)) border-box;
+           -webkit-mask:
+               linear-gradient(#fff 0 0) padding-box,
+               linear-gradient(#fff 0 0);
+           -webkit-mask-composite: destination-out;
+           mask-composite: exclude;
+           z-index: -1;
+           opacity: 0;
+           transition: opacity 0.3s ease-in-out;
+           mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+       }
+
+       .difference-card:hover::before,
+       .tech-card:hover::before {
+           opacity: 1;
+       }
     </style>
 
     <!-- Product Schema Markup -->
@@ -223,22 +275,31 @@
     </section>
 
     <!-- Tech Stack Section -->
-    <section class="features-grid-section" style="background-color: var(--bg-secondary);">
+    <section class="features-grid-section" style="background-color: var(--bg-secondary); padding: 4rem 0;">
         <div class="container">
             <h2 style="text-align: center; margin-bottom: var(--space-lg);">The Right Tech for Your Budget</h2>
             
             <div class="tech-stack-grid">
                 <div class="tech-card">
+                    <div class="tech-icon">
+                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>
+                    </div>
                     <h3>WordPress</h3>
                     <p>Perfect for businesses that want to edit their own text and keep costs low. Flexible and easy to use.</p>
                 </div>
 
                 <div class="tech-card">
+                   <div class="tech-icon">
+                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                   </div>
                     <h3>Shopify</h3>
                     <p>The gold standard for selling products online. Secure, reliable, and built for sales.</p>
                 </div>
 
                 <div class="tech-card">
+                   <div class="tech-icon">
+                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                   </div>
                     <h3>Next.js / React</h3>
                     <p>For businesses that need lightning-fast performance and custom features. Modern and scalable.</p>
                 </div>
@@ -331,6 +392,16 @@
                     <div class="addon-price">from $395</div>
                 </div>
                 <!-- Add-on Item 2 -->
+                <div class="addon-card featured">
+                    <div class="addon-icon">
+                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                    </div>
+                    <div class="addon-content">
+                        <h4 class="addon-title">AI Chatbot</h4>
+                        <p class="addon-description">Engage visitors 24/7 with a smart AI assistant.</p>
+                    </div>
+                    <div class="addon-price">$297</div>
+                </div>
                 <div class="addon-card">
                     <div class="addon-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
@@ -551,7 +622,7 @@
                 </div>
                 <div class="footer-col">
                     <h4>Contact</h4>
-                    <p>Email: <a href="mailto:hello@websited.org" class="footer-link">hello@websited.org</a></p>
+                    <p>Email: <a href="mailto:hello@simplepage.com.au" class="footer-link">hello@simplepage.com.au</a></p>
                     <p>2 Martin Place, Sydney, NSW 2000</p>
                 </div>
             </div>

@@ -207,7 +207,7 @@ Received on ${new Date().toLocaleString()}
         // Email data
         const emailData = {
             from: `Websited <noreply@${process.env.MAILGUN_DOMAIN}>`,
-            to: process.env.RECIPIENT_EMAIL || 'hello@websited.org',
+            to: process.env.RECIPIENT_EMAIL || 'hello@simplepage.com.au',
             subject: isBlueSlipQuote
                 ? `🚗 Blue Slip Quote: ${name} - ${suburb} (${vehicleType})${timing === 'today' || timing === 'tomorrow' ? ' - URGENT' : ''}`
                 : `🚀 New Growth Inquiry: ${name}${service ? ` - ${service}` : ''}`,

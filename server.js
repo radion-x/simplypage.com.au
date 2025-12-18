@@ -45,11 +45,6 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-// Catch-all route: serve index.html for single-page app navigation
-// This allows direct access to anchors and handles unmapped routes
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
 
 // Error handler
 app.use((err, req, res, next) => {
