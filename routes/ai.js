@@ -349,8 +349,8 @@ async function executeCallbackRequest(data, conversationContext) {
         // Insert callback request into database
         const result = await pool.query(
             `INSERT INTO callback_requests 
-             (name, phone, email, preferred_contact_method, preferred_time, message, conversation_context, status) 
-             VALUES ($1, $2, $3, $4, $5, $6, $7, 'pending') 
+             (name, phone, email, preferred_contact_method, preferred_time, message, conversation_context, status, source)
+            VALUES ($1, $2, $3, $4, $5, $6, $7, 'pending', 'chatbot')
              RETURNING id, created_at`,
             [
                 data.name,
