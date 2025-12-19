@@ -1361,8 +1361,9 @@
     }
 }
 @media (max-width: 768px) {
-   .features-grid-section {
-       padding-left: 1rem;
-       padding-right: 1rem;
-   }
+  .tech-stack-grid,
+  .simple-difference-grid {
+      padding-left: 1rem;
+      padding-right: 1rem;
+  }
 }
